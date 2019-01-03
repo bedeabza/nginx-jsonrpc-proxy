@@ -2,7 +2,9 @@
 
 Docker image for exposing a JSON-RPC API over simple HTTP. A simple whitelist/blacklist mechanism is available to ensure only certain RPC methods are exposed.
 
-The intended use of the proxy is for publicly available JSON-RPC APIs, for example, that of a Bitcoin full node.
+The intended use of the proxy is for publicly available JSON-RPC APIs, for example, that of a Gincoin, or Bitcoin full node.
+
+The Lua programming language is used (via [Openresty](https://openresty.org/)) for translating the request from an simple HTTP request to a JSON-RPC call. The [Openresty](https://openresty.org/) runtime uses JIT (Just In Time) compilation of the code, so it adds almost no overhead on the standard Nginx reverse proxy. 
 
 ## Examples
 
